@@ -1,6 +1,6 @@
 <template>
   <ul class="menu">
-    <li v-for="item in data">
+    <li v-for="(item, index) in data">
       <router-link :to="item.url">
         <span class="iconfont" :class="item.icon"></span>
         <span v-text="item.text"></span>
@@ -20,6 +20,10 @@
       data: {
         type: Array,
         default: []
+      },
+      length: {
+        type: Number,
+        default: 6
       }
     }
   }
@@ -41,4 +45,8 @@
 .menu li:hover > a{background:#396CAA;}
 .menu .router-link-active{background:#396CAA;}
 .menu .sub-menu .router-link-active{background:none;color:#447DC8;}
+@media screen and (max-height: 768px) {
+  .menu a{padding:5px;}
+  .sub-menu{left:85px;}
+}
 </style>

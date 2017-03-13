@@ -35,6 +35,8 @@
 <script>
   export default {
     name: 'userPanel',
+    components: {
+    },
     props: {
       data: {
         type: Object,
@@ -47,7 +49,7 @@
 .user{margin-right:-5px;padding-right:5px;}
 .face{display:block;border-radius:50%;width:80px;height:80px;overflow:hidden;margin:0 auto;cursor: pointer;}
 .face img{width:100%;}
-.user{position:relative;}
+.user{position:relative;z-index:100;}
 .panel{display:block;position:absolute;left:105px;top:0;background:#fff;box-shadow:0 1px 5px #ccc;padding:15px;min-width:300px;min-height:150px;font-size:12px;display:none;}
 .panel .name{font-size:24px;color:#C99045;}
 .panel .row{font-weight:normal;font-size:12px;color:#666;margin:0;}
@@ -56,4 +58,8 @@
 .panel .link{color:#447DC8;margin-left:10px;}
 .panel .face{width:60px;height:60px;}
 .user:hover .panel{display:block;}
+@media screen and (max-height: 768px) {
+  .face{width:60px;height:60px;}
+  .panel{left:85px;}
+}
 </style>
