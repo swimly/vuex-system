@@ -4,8 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store/store'
+import VueHead from 'vue-head'
 Vue.config.productionTip = false
-
+Vue.use(VueHead)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

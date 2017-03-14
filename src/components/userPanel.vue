@@ -48,8 +48,8 @@
 .face{display:block;border-radius:50%;width:80px;height:80px;overflow:hidden;margin:0 auto;cursor: pointer;}
 .face img{width:100%;}
 .user{position:relative;}
-.panel{display:block;position:absolute;left:105px;top:0;background:#fff;box-shadow:0 1px 5px #ccc;padding:15px;min-width:300px;min-height:150px;font-size:12px;z-index:100;display:none;}
-.panel .name{font-size:24px;color:#447DC8;}
+.panel{display:block;position:absolute;left:105px;top:0;background:#fff;box-shadow:0 1px 5px #ccc;padding:15px;min-width:300px;min-height:150px;font-size:12px;display:none;}
+.panel .name{font-size:24px;color:#C99045;}
 .panel .row{font-weight:normal;font-size:12px;color:#666;margin:0;}
 .panel .summary{font-size:12px;color:#999;margin:0;line-height:1.6;margin-top:10px;text-indent:2em;text-align:justify;text-align-last:auto;margin-top:15px;padding-top:10px;border-top:1px solid #eee;}
 .panel .row{margin-top:10px;}

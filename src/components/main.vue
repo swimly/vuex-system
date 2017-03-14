@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    zhongjian
+    首页
   </div>
 </template>
 
@@ -10,6 +10,11 @@ export default {
   name: 'hello',
   data () {
     return {
+    }
+  },
+  head: {
+    title: {
+      inner: '首页'
     }
   },
   computed: {
