@@ -9,7 +9,7 @@ const state = {
   },
   data: [{
     text: '首页',
-    url: '/',
+    url: '/home',
     icon: 'icon-home'
   }, {
     text: '用户管理',
