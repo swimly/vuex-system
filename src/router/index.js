@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import main from '@/components/main'
-
 Vue.use(Router)
 
 export default new Router({
@@ -10,6 +9,10 @@ export default new Router({
       path: '/home',
       name: 'main',
       component: main
+    }, {
+      path: '/count',
+      name: 'count',
+      component: require('@/components/chart')
     }
   ]
 })
