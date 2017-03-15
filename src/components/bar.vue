@@ -1,13 +1,13 @@
 <template>
   <div class="echarts">
     <IEcharts :option="bar" @ready="onReady" @click="onClick"></IEcharts>
-    <button @click="doRandom">Random</button>
   </div>
 </template>
 <script>
   import IEcharts from 'vue-echarts-v3'
+  import config from '../config'
   export default {
-    name: 'chart',
+    name: 'count',
     head: {
       title: {
         inner: '统计'
@@ -15,6 +15,9 @@
     },
     components: {
       IEcharts
+    },
+    created () {
+      this.handleData(this.data)
     },
     data: () => ({
       loading: true,
@@ -24,25 +27,44 @@
           text: 'ECharts 入门示例'
         },
         tooltip: {},
-        xAxis: {
-          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
-        },
-        yAxis: {},
+        xAxis: config.xAxis,
+        yAxis: config.yAxis,
         series: [{
           name: '销量',
-          type: 'line',
-          data: [5, 20, 36, 10, 10, 20]
+          type: 'bar',
+          barWidth: 30,
+          itemStyle: {
+            normal: {
+              color: this.style
+            }
+          }
         }]
       }
     }),
+    props: {
+      data: {
+        type: Array,
+        default: []
+      },
+      style: {
+        type: String,
+        default: '#447DC8'
+      },
+      title: {
+        type: String,
+        default: ''
+      }
+    },
     methods: {
-      doRandom () {
-        const that = this
-        let data = []
-        for (let i = 0, min = 5, max = 99; i < 6; i++) {
-          data.push(Math.floor(Math.random() * (max + 1 - min) + min))
-        }
-        that.bar.series[0].data = data
+      handleData (data) {
+        let name = []
+        let value = []
+        data.map((item) => {
+          name.push(item.name)
+          value.push(item.value)
+        })
+        this.bar.xAxis.data = name
+        this.bar.series[0].data = value
       },
       onReady (instance) {
         console.log(instance)

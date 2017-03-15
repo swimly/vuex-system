@@ -12,7 +12,7 @@ export default new Router({
     }, {
       path: '/count',
       name: 'count',
-      component: require('@/components/chart')
+      component: require('@/views/count')
     }
   ]
 })
