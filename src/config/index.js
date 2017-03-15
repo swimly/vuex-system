@@ -48,9 +48,12 @@ const config = {
       lineStyle: {
         type: 'dashed',
         width: 1,
-        color: '#f5f5f5'
+        color: '#eee'
       }
     }
+  },
+  tooltip: {
+    backgroundColor: 'rgba(68,125,200,0.7)'
   }
 }
 export default config

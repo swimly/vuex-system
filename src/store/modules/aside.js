@@ -48,6 +48,10 @@ const state = {
     url: '/count',
     icon: 'icon-count'
   }, {
+    text: '日程',
+    url: '/daily',
+    icon: 'icon-count'
+  }, {
     text: '设置',
     url: '/setting',
     icon: 'icon-setting'

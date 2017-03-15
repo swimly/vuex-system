@@ -13,6 +13,14 @@ export default new Router({
       path: '/count',
       name: 'count',
       component: require('@/views/count')
+    }, {
+      path: '/daily',
+      name: 'daily',
+      component: require('@/views/daily')
+    }, {
+      path: '/about',
+      name: 'about',
+      component: require('@/views/about')
     }
   ]
 })

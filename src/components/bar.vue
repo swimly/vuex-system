@@ -26,7 +26,7 @@
         title: {
           text: 'ECharts 入门示例'
         },
-        tooltip: {},
+        tooltip: config.tooltip,
         xAxis: config.xAxis,
         yAxis: config.yAxis,
         series: [{
