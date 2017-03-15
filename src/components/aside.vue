@@ -1,7 +1,7 @@
 <template>
   <div class="aside">
     <user-panel class="aside-hd" :data="user"></user-panel>
-    <menu-item :data="aside" length="6"></menu-item>
+    <menu-item :data="aside" :length="6"></menu-item>
   </div>
 </template>
 <script>

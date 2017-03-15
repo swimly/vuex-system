@@ -69,12 +69,18 @@ const getters = {
 const mutations = {
   addItem (state, value) {
     state.data.push(value)
+  },
+  setFace (state, value) {
+    state.user.face = value
   }
 }
 const actions = {
   addItem ({commit}, value) {
     const date = new Date()
     commit('addItem', value.text + date)
+  },
+  setFace ({commit}, src) {
+    commit('setFace', src)
   }
 }
 export default {

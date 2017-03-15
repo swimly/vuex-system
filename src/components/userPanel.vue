@@ -12,11 +12,22 @@
           <span class="name v-m" v-text="data.name"></span>
           <span class="v-m">({{data.degree}})</span>
           <div class="mt-5">
-            <router-link class="btn btn-light btn-mini" to="editface">修改头像</router-link>
+            <span class="btn btn-light btn-mini" @click="toggleShow">修改头像</span>
           </div>
         </li>
       </ul>
       <p class="summary" v-text="data.summary"></p>
+      <my-upload field="img"
+          @crop-success="cropSuccess"
+          @crop-upload-success="cropUploadSuccess"
+          @crop-upload-fail="cropUploadFail"
+          v-model="show"
+          :width="300"
+          :height="300"
+          url="http://localhost/vuex-system/app/upload/"
+          :params="params"
+          :headers="headers"
+          img-format="png"></my-upload>
       <ul class="row w">
         <li class="col v-m t-r">
           <router-link class="link" to="/editpassword">
@@ -33,17 +44,60 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'userPanel',
-    components: {
+import myUpload from 'vue-image-crop-upload/upload-2.vue'
+import { mapActions } from 'vuex'
+export default {
+  name: 'userPanel',
+  data () {
+    return {
+      show: true,
+      params: {
+        token: '123456798',
+        name: 'avatar'
+      },
+      headers: {
+      },
+      imgDataUrl: '' // the datebase64 url of created image
+    }
+  },
+  computed: {
+    ...mapActions({
+      face: 'setFace'
+    })
+  },
+  components: {
+    'my-upload': myUpload
+  },
+  props: {
+    data: {
+      type: Object,
+      default: {}
+    }
+  },
+  methods: {
+    setFace (url) {
+      this.$store.dispatch('setFace', url)
     },
-    props: {
-      data: {
-        type: Object,
-        default: {}
-      }
+    toggleShow () {
+      this.show = !this.show
+    },
+    cropSuccess (imgDataUrl, field) {
+      console.log('-------- crop success --------')
+      this.imgDataUrl = imgDataUrl
+      this.setFace(imgDataUrl)
+    },
+    cropUploadSuccess (jsonData, field) {
+      console.log('-------- upload success --------')
+      console.log(jsonData)
+      console.log('field: ' + field)
+    },
+    cropUploadFail (status, field) {
+      console.log('-------- upload fail --------')
+      console.log(status)
+      console.log('field: ' + field)
     }
   }
+}
 </script>
 <style>
 .user{margin-right:-5px;padding-right:5px;}
