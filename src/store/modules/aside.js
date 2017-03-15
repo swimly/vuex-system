@@ -1,4 +1,3 @@
-import api from '../../api'
 const state = {
   user: {
     name: 'swimly',
@@ -63,7 +62,6 @@ const state = {
 }
 const getters = {
   getaside (state) {
-    console.log(api.testLink())
     return state.data
   },
   getuser (state) {

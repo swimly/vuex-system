@@ -34,7 +34,7 @@
             <span class="iconfont icon-edit v-m"></span>
             <span>修改密码</span>
           </router-link>
-          <router-link class="link" to="/logout">
+          <router-link class="link" to="/login">
             <span class="iconfont icon-logout v-m"></span>
             <span>退出登录</span>
           </router-link>

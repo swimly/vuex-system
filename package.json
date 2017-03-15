@@ -22,7 +22,9 @@
     "vue-perfect-scrollbar": "0.0.7",
     "vue-router": "^2.2.0",
     "vue-simplemde": "^0.3.7",
-    "vuex": "^2.2.1"
+    "vue-top-progress": "^0.4.0",
+    "vuex": "^2.2.1",
+    "wilddog": "^2.5.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
