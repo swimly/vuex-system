@@ -9,6 +9,8 @@ export default {
   addUser () {
     console.log(0)
   },
+  login () {
+  },
   testLink () {
     axios.get('https://api.github.com/').then(function (res) {
       console.log(res)

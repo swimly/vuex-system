@@ -84,7 +84,7 @@ export default {
     cropSuccess (imgDataUrl, field) {
       console.log('-------- crop success --------')
       this.imgDataUrl = imgDataUrl
-      this.setFace(imgDataUrl)
+      this.$store.dispatch('setFace', imgDataUrl)
     },
     cropUploadSuccess (jsonData, field) {
       console.log('-------- upload success --------')
