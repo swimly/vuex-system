@@ -41,6 +41,8 @@ export default {
 <style>
 .aside{padding-top:100px;}
 .aside .user{margin-top:-100px;height:100px;padding:10px 0;}
+.ps-container>.ps-scrollbar-y-rail>.ps-scrollbar-y{width:5px !important;background:#2E62A2 !important;}
+.ps-container>.ps-scrollbar-y-rail{width:9px !important;background:none !important;}
 .scroll-area {
   position: relative;
   margin: auto;
