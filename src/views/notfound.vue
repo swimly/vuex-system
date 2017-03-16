@@ -11,7 +11,7 @@ export default {
   name: 'users',
   head: {
     title: {
-      inner: '文章'
+      inner: '404'
     }
   }
 }

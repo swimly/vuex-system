@@ -143,4 +143,5 @@ export default {
     transform: translate(0,-100%);
   }
 }
+.vue-image-crop-upload .vicp-wrap .vicp-step3 .vicp-upload{height:auto !important;}
 </style>
