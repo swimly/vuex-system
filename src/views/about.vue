@@ -7,6 +7,11 @@
   import editor from '@/components/editor'
   export default {
     name: 'about',
+    head: {
+      title: {
+        inner: '关于'
+      }
+    },
     components: {
       editor
     }

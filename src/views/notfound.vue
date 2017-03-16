@@ -1,6 +1,6 @@
 <template>
   <div>
-    文章
+    404
   </div>
 </template>
 <script>

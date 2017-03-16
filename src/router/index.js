@@ -13,6 +13,7 @@ export default new Router({
     }, {
       path: '/',
       name: 'main',
+      redirect: '/login',
       components: {
         default: require('@/views/view')
       },
@@ -86,8 +87,14 @@ export default new Router({
         }
       ]
     }, {
+      path: '/404',
+      name: 'notfound',
+      components: {
+        default: require('@/views/notfound')
+      }
+    }, {
       path: '*',
-      redirect: '/login'
+      redirect: '/404'
     }
   ]
 })

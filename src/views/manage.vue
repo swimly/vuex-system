@@ -5,6 +5,11 @@
 </template>
 <script>
 export default {
-  name: 'users'
+  name: 'users',
+  head: {
+    title: {
+      inner: '权限'
+    }
+  }
 }
 </script>
