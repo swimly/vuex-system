@@ -27,3 +27,17 @@ input:focus{outline:none;}
 .input input:focus{transform: translateY(-1px);box-shadow:0 1px 5px #ccc;}
 .icon-left input{padding-left:40px;}
 .input .iconfont{position:absolute;left:0;display:inline-block;width:40px;text-align:center;top:50%;transform: translateY(-50%);font-size:20px;color:#999;}
+
+
+@font-face {
+    font-family: "Capsuula";
+    src: url("../fonts/Capsuula.eot"); /* IE9 */
+    src: url("../fonts/Capsuula.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("../fonts/Capsuula.woff") format("woff"), /* chrome、firefox */
+    url("../fonts/Capsuula.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("../fonts/Capsuula.svg#Capsuula") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}

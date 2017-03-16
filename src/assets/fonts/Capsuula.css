@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Capsuula";
+    src: url("Capsuula.eot"); /* IE9 */
+    src: url("Capsuula.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("Capsuula.woff") format("woff"), /* chrome、firefox */
+    url("Capsuula.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("Capsuula.svg#Capsuula") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+
