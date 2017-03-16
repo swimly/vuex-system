@@ -2,6 +2,7 @@ const state = {
   user: {
     name: 'swimly',
     face: './static/img/face.jpg',
+    showInfo: false,
     age: 27,
     degree: '管理员',
     summary: '性格偏于内向，为人坦率、热情、讲求原则；处事乐观、专心、细致、头脑清醒；富有责任心、乐于助人。'
@@ -13,31 +14,19 @@ const state = {
   }, {
     text: '用户管理',
     url: '/users',
-    icon: 'icon-users',
-    sub: [{
-      text: '添加',
-      url: '/users/add'
-    }, {
-      text: '列表',
-      url: '/users/list'
-    }, {
-      text: '分类',
-      url: '/users/classify'
-    }]
+    icon: 'icon-users'
   }, {
     text: '项目管理',
     url: '/projects',
-    icon: 'icon-projects',
-    sub: [{
-      text: '添加',
-      url: '/projects/add'
-    }, {
-      text: '列表',
-      url: '/projects/list'
-    }, {
-      text: '分类',
-      url: '/projects/classify'
-    }]
+    icon: 'icon-projects'
+  }, {
+    text: '文章管理',
+    url: '/articles',
+    icon: 'icon-articles'
+  }, {
+    text: '图库管理',
+    url: '/photos',
+    icon: 'icon-photos'
   }, {
     text: '权限管理',
     url: '/manage',
@@ -49,7 +38,7 @@ const state = {
   }, {
     text: '日程',
     url: '/daily',
-    icon: 'icon-count'
+    icon: 'icon-daily'
   }, {
     text: '设置',
     url: '/setting',
@@ -66,6 +55,9 @@ const getters = {
   },
   getuser (state) {
     return state.user
+  },
+  showInfo (state) {
+    return state.user.showInfo
   }
 }
 const mutations = {
@@ -74,6 +66,9 @@ const mutations = {
   },
   setFace (state, value) {
     state.user.face = value
+  },
+  toggleInfo (state) {
+    state.user.showInfo = !state.user.showInfo
   }
 }
 const actions = {
@@ -83,6 +78,9 @@ const actions = {
   },
   setFace ({commit}, src) {
     commit('setFace', src)
+  },
+  toggleInfo ({commit}) {
+    commit('toggleInfo')
   }
 }
 export default {

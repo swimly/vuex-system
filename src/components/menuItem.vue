@@ -34,7 +34,7 @@
 .menu a{color:#fff;display:block;padding:10px 5px;position:relative;border-bottom:1px solid #4B83CE;}
 .menu a span{display:block;text-align:center;font-size:12px;padding:5px;}
 .menu a .iconfont{font-size:24px;}
-.sub-menu{position:absolute;left:105px;top:0;background:#fff;width:400px;box-shadow:0 1px 5px #ccc;padding:10px;display:none;}
+.sub-menu{position:absolute;left:105px;top:0;background:#fff;width:400px;box-shadow:0 1px 5px #ccc;padding:10px;display:none;z-index:100;}
 .sub-menu li{display:inline-block;}
 .sub-menu a{color:#666;border:none;font-size:12px;display:inline-block;position:relative;padding:0 1em;}
 .sub-menu a:before{content:"";display:inline-block;width:1px;height:12px;background:#ccc;position:absolute;left:0;top:50%;margin-top:-6px;}

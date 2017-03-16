@@ -30,6 +30,42 @@ export default new Router({
             sub: require('@/views/count')
           }
         }, {
+          path: '/users',
+          name: 'users',
+          components: {
+            sub: require('@/views/users')
+          }
+        }, {
+          path: '/projects',
+          name: 'projects',
+          components: {
+            sub: require('@/views/projects')
+          }
+        }, {
+          path: '/articles',
+          name: 'articles',
+          components: {
+            sub: require('@/views/articles')
+          }
+        }, {
+          path: '/photos',
+          name: 'photos',
+          components: {
+            sub: require('@/views/photos')
+          }
+        }, {
+          path: '/setting',
+          name: 'setting',
+          components: {
+            sub: require('@/views/setting')
+          }
+        }, {
+          path: '/manage',
+          name: 'manage',
+          components: {
+            sub: require('@/views/manage')
+          }
+        }, {
           path: '/daily',
           name: 'daily',
           components: {

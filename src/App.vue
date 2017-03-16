@@ -8,6 +8,7 @@
 import { mapGetters } from 'vuex'
 import '@/assets/css/main.css'
 import '@/assets/fonts/iconfont.css'
+import '@/assets/css/animate.css'
 export default {
   name: 'app',
   components: {

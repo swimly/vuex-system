@@ -1,6 +1,5 @@
 <template>
   <div class="daily">
-    日程
     <calendar></calendar>
   </div>
 </template>

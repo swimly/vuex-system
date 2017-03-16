@@ -1,8 +1,15 @@
 <template>
   <div class="home">
-    首页
+    首页{{info}}
   </div>
 </template>
 <script>
-  export default {}
+  import { mapGetters } from 'vuex'
+  export default {
+    computed: {
+      ...mapGetters({
+        info: 'showInfo'
+      })
+    }
+  }
 </script>

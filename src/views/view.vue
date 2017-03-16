@@ -13,6 +13,8 @@ export default {
   components: {
     'my-aside': aside,
     'my-header': header
+  },
+  methods: {
   }
 }
 </script>

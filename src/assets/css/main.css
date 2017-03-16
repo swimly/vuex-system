@@ -26,9 +26,3 @@ input:focus{outline:none;}
 .input input:focus{transform: translateY(-1px);box-shadow:0 1px 5px #ccc;}
 .icon-left input{padding-left:40px;}
 .input .iconfont{position:absolute;left:0;display:inline-block;width:40px;text-align:center;top:50%;transform: translateY(-50%);font-size:20px;color:#999;}
-@media screen and (max-height: 768px) {
-    html{font-size:calc(100vh/76.8);}
-    .app{padding-left:80px;}
-    .aside{width:80px;margin-left:-80px;}
-    .header{left:80px;}
-}
