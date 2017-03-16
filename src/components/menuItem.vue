@@ -30,7 +30,7 @@
 </script>
 <style>
 .menu{padding:10px 0;}
-.menu li{position:relative;padding:0;margin-right:-5px;padding-right:5px;}
+.menu li{position:relative;padding:0;}
 .menu a{color:#fff;display:block;padding:10px 5px;position:relative;border-bottom:1px solid #4B83CE;}
 .menu a span{display:block;text-align:center;font-size:12px;padding:5px;}
 .menu a .iconfont{font-size:24px;}
