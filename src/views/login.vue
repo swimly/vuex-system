@@ -43,11 +43,11 @@
 </script>
 <style>
 .login{background:#F8F8F8;}
-.banner{display:inline-block;height:500px;background:#3082E0;width:100%;}
+.banner{display:inline-block;height:500px;background:#447DC8;width:100%;}
 .banner .mid-layout{position:relative;}
 .banner .img{height:100%;}
 .login-panel{position:absolute;right:0;top:50%;transform: translate(0,-50%);padding:20px;background:#fff;display:inline-block;width:300px;border-radius:5px;}
-.login-panel .title{margin:0;font-weight:normal;font-size:16px;color:#3082E0;border-bottom:1px solid #ccc;padding-bottom:10px;margin-bottom:10px;}
+.login-panel .title{margin:0;font-weight:normal;font-size:16px;color:#447DC8;border-bottom:1px solid #ccc;padding-bottom:10px;margin-bottom:10px;}
 .logo{text-align:left;height:60px;}
 .copyright{font-size:12px;color:#999;height:60px;line-height:60px;}
 </style>
