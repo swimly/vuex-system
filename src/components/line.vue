@@ -7,7 +7,7 @@
 <script>
   import IEcharts from 'vue-echarts-v3'
   export default {
-    name: 'chart',
+    name: 'line',
     head: {
       title: {
         inner: '统计'

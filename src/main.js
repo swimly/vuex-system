@@ -5,8 +5,16 @@ import App from './App'
 import router from './router'
 import store from './store/store'
 import VueHead from 'vue-head'
+import Toasted from 'vue-toasted'
+import VueLocalStorage from 'vue-localstorage'
 Vue.config.productionTip = false
 Vue.use(VueHead)
+Vue.use(VueLocalStorage)
+Vue.use(Toasted, {
+  theme: 'primary',
+  position: 'top-center',
+  duration: 2000
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
