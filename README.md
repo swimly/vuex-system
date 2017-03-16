@@ -1,4 +1,4 @@
-# vuexdemo
+# vuexdemo 
 
 > A Vue.js project
 
