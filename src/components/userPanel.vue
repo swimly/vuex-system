@@ -25,7 +25,7 @@
           v-model="show"
           :width="150"
           :height="150"
-          url="http://localhost/vuex-system/app/upload/"
+          url="http://localhost/vuex-system/app/upload.php"
           :params="params"
           :headers="headers"
           img-format="png"></my-upload>
@@ -55,8 +55,7 @@ export default {
     return {
       show: false,
       params: {
-        token: '123456798',
-        name: 'avatar'
+        url: ''
       },
       headers: {
       },
@@ -98,20 +97,16 @@ export default {
       this.$store.dispatch('toggleInfo')
     },
     cropSuccess (imgDataUrl, field) {
-      console.log('-------- crop success --------')
       this.imgDataUrl = imgDataUrl
       this.$store.dispatch('setFace', imgDataUrl)
-      api.setFace(this, imgDataUrl)
+      this.params.url = imgDataUrl
+      console.log(this.params)
     },
     cropUploadSuccess (jsonData, field) {
-      console.log('-------- upload success --------')
       console.log(jsonData)
-      console.log('field: ' + field)
+      // api.setFace(this, imgDataUrl)
     },
     cropUploadFail (status, field) {
-      console.log('-------- upload fail --------')
-      console.log(status)
-      console.log('field: ' + field)
     }
   }
 }

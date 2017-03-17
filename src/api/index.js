@@ -4,7 +4,7 @@ let config = {
   syncURL: 'https://lcdc.wilddogio.com/',
   authDomain: 'lcdc.wilddog.com'
 }
-let service = 'http://localhost/app/'
+let service = 'http://localhost/vuex-system/app/'
 wilddog.initializeApp(config)
 let ref = wilddog.sync().ref()
 export default {
