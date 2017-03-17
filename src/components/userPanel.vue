@@ -18,7 +18,6 @@
             </div>
           </li>
         </ul>
-        <p>{{data}}</p>
         <my-upload field="img"
           @crop-success="cropSuccess"
           @crop-upload-success="cropUploadSuccess"
@@ -62,6 +61,13 @@ export default {
       headers: {
       },
       imgDataUrl: '' // the datebase64 url of created image
+    }
+  },
+  created () {
+    if (this.$localStorage.get('wilddog:session::lcdc:DEFAULT')) {
+      this.$store.dispatch('setAuth', JSON.parse(this.$localStorage.get('wilddog:session::lcdc:DEFAULT')).currentUser)
+    } else {
+      this.$router.push('/login')
     }
   },
   computed: {

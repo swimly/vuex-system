@@ -24,10 +24,7 @@ export default {
   loginByEmail (email, pwd, This) {
     This.$refs.topProgress.start()
     wilddog.auth().signInWithEmailAndPassword(email, pwd).then(function (res) {
-      wilddog.auth().onAuthStateChanged(function (user) {
-        This.$store.dispatch('setAuth', wilddog.auth().currentUser)
-        console.log(This.$localStorage.get('login'))
-      })
+      This.$store.dispatch('setAuth', JSON.parse(This.$localStorage.get('wilddog:session::lcdc:DEFAULT')).currentUser)
       This.$refs.topProgress.done()
       setTimeout(function () {
         This.$router.push('/home')
@@ -68,6 +65,7 @@ export default {
     })
     .then(function (res) {
       console.log(service + res.data)
+      console.log(wilddog.auth().currentUser)
       wilddog.auth().currentUser.updateProfile({
         'photoURL': service + res.data
       }).then(function (user) {
