@@ -1,7 +1,7 @@
 const state = {
+  auth: {
+  },
   user: {
-    name: 'swimly',
-    face: './static/img/face.jpg',
     showInfo: false,
     age: 27,
     degree: '管理员',
@@ -58,6 +58,9 @@ const getters = {
   },
   showInfo (state) {
     return state.user.showInfo
+  },
+  getAuth (state) {
+    return state.auth
   }
 }
 const mutations = {
@@ -65,10 +68,13 @@ const mutations = {
     state.data.push(value)
   },
   setFace (state, value) {
-    state.user.face = value
+    state.auth.photoURL = value
   },
   toggleInfo (state) {
     state.user.showInfo = !state.user.showInfo
+  },
+  setAuth (state, value) {
+    state.auth = value
   }
 }
 const actions = {
@@ -81,6 +87,9 @@ const actions = {
   },
   toggleInfo ({commit}) {
     commit('toggleInfo')
+  },
+  setAuth ({commit}, value) {
+    commit('setAuth', value)
   }
 }
 export default {

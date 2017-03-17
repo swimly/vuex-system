@@ -1,6 +1,6 @@
 <template>
   <div class="aside">
-    <user-panel class="aside-hd" :data="user"></user-panel>
+    <user-panel class="aside-hd" :data="auth"></user-panel>
     <VuePerfectScrollbar class="scroll-area" v-once :settings="settings" @ps-scroll-y="scrollHanle">
       <menu-item :data="aside" :length="6"></menu-item>
     </VuePerfectScrollbar>
@@ -33,7 +33,8 @@ export default {
   computed: {
     ...mapGetters({
       aside: 'getaside',
-      user: 'getuser'
+      user: 'getuser',
+      auth: 'getAuth'
     })
   }
 }

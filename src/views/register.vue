@@ -30,7 +30,7 @@
     name: 'login',
     head: {
       title: {
-        inner: '登录'
+        inner: '注册'
       }
     },
     data () {
