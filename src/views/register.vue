@@ -6,7 +6,7 @@
         <div class="mid-layout h t-l">
           <img class="img" src="static/img/login.png" alt="">
           <div class="login-panel">
-            <h1 class="title">用户登录</h1>
+            <h1 class="title">用户注册</h1>
             <div class="input w icon-left mt-10">
               <input type="text" placeholder="用户名" v-model="email">
               <span class="iconfont icon-users"></span>
@@ -16,23 +16,18 @@
               <span class="iconfont icon-users"></span>
             </div>
             <div v-on:click="submit" class="btn btn-blue btn-large w mt-10">登录</div>
-            <p class="t-r fs-12 c-6">还没有账号？去<router-link class="c-pink" to="/register">注册</router-link>！</p>
+            <p class="t-r fs-12 c-6">已有账号？去<router-link class="c-pink" to="/login">登录</router-link>！</p>
           </div>
         </div>
       </div>
       <p class="copyright">大连网月科技开发有限公司 © 版权所有 辽ICP备12008717号</p>
-      <top-progress ref="topProgress"></top-progress>
     </div>
   </div>
 </template>
 <script>
   import api from '../api'
-  import topProgress from 'vue-top-progress'
   export default {
     name: 'login',
-    components: {
-      topProgress
-    },
     head: {
       title: {
         inner: '登录'
@@ -46,7 +41,7 @@
     },
     methods: {
       submit () {
-        api.loginByEmail(this.email, this.password, this)
+        api.regByEmail(this.email, this.password, this)
       }
     }
   }

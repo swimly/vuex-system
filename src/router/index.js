@@ -11,6 +11,12 @@ export default new Router({
         default: require('@/views/login')
       }
     }, {
+      path: '/register',
+      name: 'register',
+      components: {
+        default: require('@/views/register')
+      }
+    }, {
       path: '/',
       name: 'main',
       redirect: '/login',

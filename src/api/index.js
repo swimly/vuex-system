@@ -10,26 +10,43 @@ export default {
   addUser () {
     console.log(0)
   },
-  regByEmail (email, pwd) {
-    wilddog.auth().createUserWithEmailAndPassword('979741120@qq.com', '122514').then(function (user) {
+  regByEmail (email, pwd, This) {
+    wilddog.auth().createUserWithEmailAndPassword(email, pwd).then(function (user) {
       console.log(user)
-    }).catch(function (error) {
-      console.log(error)
+    }).catch(function (err) {
+      switch (err.code) {
+        case 22203 :
+          console.log('邮箱已被注册！')
+          break
+      }
     })
   },
-  loginByEmail (email, pwd, success, error) {
+  loginByEmail (email, pwd, This) {
+    This.$refs.topProgress.start()
     wilddog.auth().signInWithEmailAndPassword(email, pwd).then(function (res) {
-      console.log(res)
-      wilddog.auth().currentUser.updateProfile({
-        displayName: '刘勇',
-        photoURL: 'https://example.com/path/photo.jpg'
-      }).then(function () {
-        console.log('资料修改成功')
-      }).catch(function (err) {
-        console.log(err)
-      })
+      This.$refs.topProgress.done()
+      setTimeout(function () {
+        This.$router.push('/home')
+      }, 500)
     }).catch(function (err) {
-      console.log(err)
+      console.log(err.code, err)
+      switch (err.code) {
+        case 22220 :
+          This.$refs.topProgress.fail()
+          This.$toasted.error('不存在该用户！')
+          console.log('不存在该用户！')
+          break
+        case 22009 :
+          This.$refs.topProgress.fail()
+          This.$toasted.error('邮箱有误！')
+          console.log('邮箱有误！')
+          break
+        case 22010 :
+          This.$refs.topProgress.fail()
+          This.$toasted.error('密码有误！')
+          console.log('密码有误！')
+          break
+      }
     })
   },
   testLink () {
