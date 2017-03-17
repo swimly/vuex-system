@@ -8,7 +8,7 @@
           <div class="login-panel">
             <h1 class="title">用户登录</h1>
             <div class="input w icon-left mt-10">
-              <input type="text" placeholder="用户名" v-model="username">
+              <input type="text" placeholder="用户名" v-model="email">
               <span class="iconfont icon-users"></span>
             </div>
             <div class="input w icon-left mt-10">
@@ -29,14 +29,13 @@
     name: 'login',
     data () {
       return {
-        username: '',
+        email: '',
         password: ''
       }
     },
     methods: {
       submit () {
-        api.login()
-        this.$router.push('/home')
+        api.loginByEmail(this.email, this.password)
       }
     }
   }
