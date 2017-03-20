@@ -57,18 +57,18 @@ export default {
   },
   // 设置头像
   setFace (This, path) {
-    let currentUser = wilddog.auth().currentUser
-    console.log(currentUser)
-    if (currentUser != null) {
-      currentUser.updateProfile({
-        photoURL: service + path
-      }).then(function () {
-        console.log('头像更改成功')
-      })
-    } else {
-      console.log('尚未登陆')
-      console.log(service)
-    }
+    wilddog.auth().onAuthStateChanged(function (user) {
+      if (user != null) {
+        user.updateProfile({
+          photoURL: service + path
+        }).then(function () {
+          console.log('头像更改成功')
+        })
+      } else {
+        console.log('尚未登陆')
+        console.log(service)
+      }
+    })
   },
   testLink () {
     let admin = ref.child('admin')
