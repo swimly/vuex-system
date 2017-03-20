@@ -32,15 +32,21 @@ export default {
       switch (err.code) {
         case 22220 :
           This.$refs.topProgress.fail()
-          This.$toasted.error('不存在该用户！')
+          This.$toasted.error('不存在该用户！', {
+            position: 'top-center'
+          })
           break
         case 22009 :
           This.$refs.topProgress.fail()
-          This.$toasted.error('邮箱有误！')
+          This.$toasted.error('邮箱有误！', {
+            position: 'top-center'
+          })
           break
         case 22010 :
           This.$refs.topProgress.fail()
-          This.$toasted.error('密码有误！')
+          This.$toasted.error('密码有误！', {
+            position: 'top-center'
+          })
           break
       }
     })
@@ -57,15 +63,28 @@ export default {
   },
   // 设置头像
   setFace (This, path) {
+    This.$refs.topProgress.start()
     wilddog.auth().onAuthStateChanged(function (user) {
       if (user != null) {
         user.updateProfile({
           photoURL: service + path
         }).then(function () {
           console.log('头像更改成功')
+          This.$toasted.show('头像修改成功！', {
+            position: 'top-right'
+          })
+          This.$refs.topProgress.done()
+        }).catch(function () {
+          This.$refs.topProgress.fail()
+          This.$toasted.error('修改失败！', {
+            position: 'top-right'
+          })
         })
       } else {
         console.log('尚未登陆')
+        This.$toasted.show('成功退出登录！', {
+          position: 'top-center'
+        })
         console.log(service)
       }
     })

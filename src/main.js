@@ -14,7 +14,6 @@ Vue.use(VueHead)
 Vue.use(VueLocalStorage)
 Vue.use(Toasted, {
   theme: 'primary',
-  position: 'top-center',
   duration: 2000
 })
 /* eslint-disable no-new */

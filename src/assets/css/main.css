@@ -30,9 +30,11 @@ input:focus{outline:none;}
 .icon-left input{padding-left:40px;}
 .input .iconfont{position:absolute;left:0;display:inline-block;width:40px;text-align:center;top:50%;transform: translateY(-50%);font-size:20px;color:#999;}
 
+#app #toasted-container.top-center{left:100px !important;}
 #toasted-container{max-width:100% !important;}
-#toasted-container.top-center{top:0 !important;left:0 !important;width:100%;transform:translate(0,35px) !important;padding:0 5px;}
-#toasted-container .toasted{position:static !important;float:none !important;height:40px !important;line-height:40px !important;background:#fff !important;margin:5px 0 !important;text-align:center;display:block !important;}
+#toasted-container.top-center{top:0 !important;left:0 !important;width:100%;transform:translate(0,35px) !important;padding:0;}
+#toasted-container.top-right{top:0 !important;left:100px !important;width:100%;transform:translate(0,35px) !important;padding:0;}
+#toasted-container .toasted{position:static !important;float:none !important;height:40px !important;line-height:40px !important;background:#fff !important;margin:0 !important;text-align:center;display:block !important;}
 #toasted-container .toasted.primary{box-shadow:none !important;border:1px solid #f1f1f1;background:#f5f5f5;color:#86C905 !important;background:#EDFFF2 !important;border-color:#BCE5C9 !important;}
 #toasted-container .toasted.primary.error{color:#F86868 !important;background:#FCF0F0 !important;border-color:#FFE8E8 !important;}
 
