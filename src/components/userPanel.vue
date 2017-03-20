@@ -46,7 +46,7 @@
   </div>
 </template>
 <script>
-import myUpload from 'vue-image-crop-upload/upload-2.vue'
+import myUpload from 'vue-image-crop-upload/upload-2'
 import api from '../api'
 import { mapGetters } from 'vuex'
 export default {
@@ -104,7 +104,7 @@ export default {
     },
     cropUploadSuccess (jsonData, field) {
       console.log(jsonData)
-      // api.setFace(this, imgDataUrl)
+      api.setFace(this, jsonData.body.path)
     },
     cropUploadFail (status, field) {
     }

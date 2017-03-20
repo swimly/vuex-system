@@ -7,6 +7,8 @@ import store from './store/store'
 import VueHead from 'vue-head'
 import Toasted from 'vue-toasted'
 import VueLocalStorage from 'vue-localstorage'
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
 Vue.config.productionTip = false
 Vue.use(VueHead)
 Vue.use(VueLocalStorage)

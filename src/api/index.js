@@ -1,4 +1,3 @@
-import axios from 'axios'
 import * as wilddog from 'wilddog'
 let config = {
   syncURL: 'https://lcdc.wilddogio.com/',
@@ -57,26 +56,19 @@ export default {
     })
   },
   // 设置头像
-  setFace (This, src) {
-    axios.get(service + 'upload.php', {
-      params: {
-        url: src
-      }
-    })
-    .then(function (res) {
-      console.log(service + res.data)
-      console.log(wilddog.auth().currentUser)
-      wilddog.auth().currentUser.updateProfile({
-        'photoURL': service + res.data
-      }).then(function (user) {
-        console.log('update user ->', user)
-      }).catch(function (err) {
-        console.log(err)
+  setFace (This, path) {
+    let currentUser = wilddog.auth().currentUser
+    console.log(currentUser)
+    if (currentUser != null) {
+      currentUser.updateProfile({
+        photoURL: service + path
+      }).then(function () {
+        console.log('头像更改成功')
       })
-    })
-    .catch(function (err) {
-      console.log(err)
-    })
+    } else {
+      console.log('尚未登陆')
+      console.log(service)
+    }
   },
   testLink () {
     let admin = ref.child('admin')
