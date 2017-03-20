@@ -30,6 +30,8 @@ input:focus{outline:none;}
 .icon-left input{padding-left:40px;}
 .input .iconfont{position:absolute;left:0;display:inline-block;width:40px;text-align:center;top:50%;transform: translateY(-50%);font-size:20px;color:#999;}
 
+.vue-image-crop-upload .vicp-wrap .vicp-step1 .vicp-drop-area{height:auto !important;}
+
 #app #toasted-container.top-center{left:100px !important;}
 #toasted-container{max-width:100% !important;}
 #toasted-container.top-center{top:0 !important;left:0 !important;width:100%;transform:translate(0,35px) !important;padding:0;}
