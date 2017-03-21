@@ -3,7 +3,7 @@ let config = {
   syncURL: 'https://lcdc.wilddogio.com/',
   authDomain: 'lcdc.wilddog.com'
 }
-let service = 'http://localhost/vuex-system/app/'
+let service = 'http://192.168.31.73:8080/system/'
 wilddog.initializeApp(config)
 let ref = wilddog.sync().ref()
 let time = new Date()
@@ -90,6 +90,35 @@ export default {
         }
       })
     }
+  },
+  loginByQQ (This) {
+    var provider = new wilddog.auth.QQAuthProvider()
+    wilddog.auth().signInWithPopup(provider).then(function (user) {
+      console.log(user)
+    }).catch(function (error) {
+        // 错误处理
+      console.log(error)
+    })
+  },
+  loginByWexin (This) {
+    var provider = new wilddog.auth.WeixinAuthProvider()
+    wilddog.auth().signInWithPopup(provider).then(function (user) {
+      console.log(user)
+    }).catch(function (error) {
+        // 错误处理
+      console.log(error)
+        // ...
+    })
+  },
+  loginByWebo (This) {
+    var provider = new wilddog.auth.WeiboAuthProvider()
+    wilddog.auth().signInWithPopup(provider).then(function (user) {
+      console.log(user)
+    }).catch(function (error) {
+        // 错误处理
+      console.log(error)
+        // ...
+    })
   },
   // 退出登录
   logout (This) {

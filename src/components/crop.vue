@@ -15,7 +15,7 @@
       v-model="show"
       :width="150"
       :height="150"
-      url="http://localhost/vuex-system/app/upload.php"
+      url="http://192.168.31.73:8080/system/upload.php"
       :params="params"
       :headers="headers"
       img-format="png">

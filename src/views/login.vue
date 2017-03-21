@@ -18,9 +18,9 @@
             <div v-on:click="submit" class="btn btn-blue btn-large w mt-10">登录</div>
             <h3 class="sub">使用第三方登录</h3>
             <p class="t-c other">
-              <a href="" class="iconfont icon-qq"></a>
-              <a href="" class="iconfont icon-weixin"></a>
-              <a href="" class="iconfont icon-weibo"></a>
+              <span class="iconfont icon-qq" v-on:click="loginByQQ"></span>
+              <span v-on:click="loginByWexin" class="iconfont icon-weixin"></span>
+              <span v-on:click="loginByWebo" class="iconfont icon-weibo"></span>
             </p>
             <p class="t-r fs-12 c-6">还没有账号？去<router-link class="c-pink" to="/register">注册</router-link>！</p>
           </div>
@@ -53,6 +53,15 @@
     methods: {
       submit () {
         api.loginByEmail(this.email, this.password, this)
+      },
+      loginByQQ () {
+        api.loginByQQ(this)
+      },
+      loginByWexin () {
+        api.loginByWexin(this)
+      },
+      loginByWebo () {
+        api.loginByWebo(this)
       }
     }
   }
@@ -67,8 +76,8 @@
 .logo{text-align:left;height:60px;}
 .copyright{font-size:12px;color:#999;height:60px;line-height:60px;}
 .login .sub{font-weight:normal;font-size:14px;color:#999;text-align:center;border-bottom:1px solid #eee;padding-bottom:10px;}
-.login .other a{font-size:3em;vertical-align:middle;display:inline-block;margin:0 5px;}
-.login .other a:hover{opacity:0.9;filter:alpha(opacity=90)}
-.login .other a:active{opacity:1;filter:alpha(opacity=100)}
+.login .other .iconfont{font-size:3em;vertical-align:middle;display:inline-block;margin:0 5px;}
+.login .other .iconfont:hover{opacity:0.9;filter:alpha(opacity=90)}
+.login .other .iconfont:active{opacity:1;filter:alpha(opacity=100)}
 .icon-qq{color:#498AD5;}.icon-weibo{color:#E05244;}.icon-weixin{color:#00BB29;}
 </style>
