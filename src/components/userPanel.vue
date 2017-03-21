@@ -104,7 +104,6 @@ export default {
       this.imgDataUrl = imgDataUrl
       this.$store.dispatch('setFace', imgDataUrl)
       this.params.url = imgDataUrl
-      console.log(this.params)
     },
     cropUploadSuccess (jsonData, field) {
       console.log(jsonData)

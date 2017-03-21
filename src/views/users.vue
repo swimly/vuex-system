@@ -4,8 +4,8 @@
       <div class="row w h">
         <div class="col v-m">
           <div class="input"><input type="text" placeholder="姓名" v-model="displayName"></div>
-          <div class="input"><input type="text" placeholder="性别" v-model="sex"></div>
-          <a href="javascript:;" class="btn btn-blue iconfont icon-search" v-on:click="search({displayName, sex})"></a>
+          <div class="input"><input type="text" placeholder="性别" v-model="sexType"></div>
+          <a href="javascript:;" class="btn btn-blue iconfont icon-search" v-on:click="search({displayName, sexType})"></a>
         </div>
         <div class="col v-m t-r">
           <span class="btn btn-blue" v-on:click="showMask">
@@ -93,7 +93,7 @@ export default {
   data () {
     return {
       displayName: '',
-      sex: null,
+      sexType: '',
       index: 0
     }
   },

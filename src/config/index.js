@@ -71,7 +71,7 @@ const config = {
     displayName: '刘勇',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '女',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -79,7 +79,7 @@ const config = {
     displayName: '刘勇1',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '女',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -87,7 +87,7 @@ const config = {
     displayName: '刘勇3',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '女',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -95,7 +95,7 @@ const config = {
     displayName: '刘勇33',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -103,7 +103,7 @@ const config = {
     displayName: '刘勇22',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -111,7 +111,7 @@ const config = {
     displayName: '刘勇2',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -119,7 +119,7 @@ const config = {
     displayName: '刘勇432',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -127,7 +127,7 @@ const config = {
     displayName: '刘勇2354',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -135,7 +135,7 @@ const config = {
     displayName: '刘勇234',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -143,7 +143,7 @@ const config = {
     displayName: '刘勇3543',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -151,7 +151,7 @@ const config = {
     displayName: '刘勇2343224',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -159,7 +159,7 @@ const config = {
     displayName: '刘勇234234',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -167,7 +167,7 @@ const config = {
     displayName: '刘勇234',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -175,7 +175,7 @@ const config = {
     displayName: '刘勇12',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -183,7 +183,7 @@ const config = {
     displayName: '刘勇11',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -191,7 +191,7 @@ const config = {
     displayName: '刘勇345',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -199,7 +199,7 @@ const config = {
     displayName: '刘勇',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -207,7 +207,7 @@ const config = {
     displayName: '刘勇1',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -215,7 +215,7 @@ const config = {
     displayName: '刘勇3',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -223,7 +223,7 @@ const config = {
     displayName: '刘勇33',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -231,7 +231,7 @@ const config = {
     displayName: '刘勇22',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -239,7 +239,7 @@ const config = {
     displayName: '刘勇2',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -247,7 +247,7 @@ const config = {
     displayName: '刘勇432',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -255,7 +255,7 @@ const config = {
     displayName: '刘勇2354',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -263,7 +263,7 @@ const config = {
     displayName: '刘勇234',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -271,7 +271,7 @@ const config = {
     displayName: '刘勇3543',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -279,7 +279,7 @@ const config = {
     displayName: '刘勇2343224',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -287,7 +287,7 @@ const config = {
     displayName: '刘勇234234',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -295,7 +295,7 @@ const config = {
     displayName: '刘勇234',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -303,7 +303,7 @@ const config = {
     displayName: '刘勇12',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -311,7 +311,7 @@ const config = {
     displayName: '刘勇11',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }, {
@@ -319,7 +319,7 @@ const config = {
     displayName: '刘勇345',
     email: '979741120@qq.com',
     phoneNumber: '18827078587',
-    sex: 0,
+    sex: '男',
     createTime: '2017-3-17',
     lastLoginTime: '2017-3-20'
   }]

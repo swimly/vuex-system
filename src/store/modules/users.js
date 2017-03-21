@@ -55,17 +55,17 @@ const mutations = {
   },
   search (state, payload) {
     state.info = config.info
-    if (payload.displayName === '' && payload.sex !== '') {
+    if (payload.displayName === '' && payload.sexType !== '') {
       state.info = state.info.filter(function (item) {
-        return item.sex.match(payload.sex)
+        return item.sex.match(payload.sexType)
       })
-    } else if (payload.displayName !== '' && payload.sex === '') {
+    } else if (payload.displayName !== '' && payload.sexType === '') {
       state.info = state.info.filter(function (item) {
         return item.displayName.match(payload.displayName)
       })
-    } else if (payload.displayName !== '' && payload.sex !== '') {
+    } else if (payload.displayName !== '' && payload.sexType !== '') {
       state.info = state.info.filter(function (item) {
-        return item.displayName.match(payload.displayName) && item.sex.match(payload.sex)
+        return item.displayName.match(payload.displayName) && item.sex.match(payload.sexType)
       })
     } else {
       state.info = state.info
