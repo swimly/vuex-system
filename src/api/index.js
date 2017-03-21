@@ -55,6 +55,9 @@ export default {
   logout (This) {
     wilddog.auth().signOut().then(function () {
       console.log('成功退出登录')
+      This.$toasted.show('成功退出登录！', {
+        position: 'top-center'
+      })
       This.$localStorage.set('login', null)
       This.$router.push('/login')
     }).catch(function (err) {
@@ -81,11 +84,6 @@ export default {
           })
         })
       } else {
-        console.log('尚未登陆')
-        This.$toasted.show('成功退出登录！', {
-          position: 'top-center'
-        })
-        console.log(service)
       }
     })
   },
