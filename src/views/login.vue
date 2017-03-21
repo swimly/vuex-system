@@ -9,20 +9,20 @@
             <h1 class="title">用户登录</h1>
             <div class="input w icon-left mt-10">
               <input type="text" placeholder="邮箱" v-model="email">
-              <span class="iconfont icon-user"></span>
+              <span class="iconfont icon-email"></span>
             </div>
             <div class="input w icon-left mt-10">
               <input type="text" placeholder="密码" v-model="password">
               <span class="iconfont icon-password"></span>
             </div>
             <div v-on:click="submit" class="btn btn-blue btn-large w mt-10">登录</div>
-            <p class="t-r fs-12 c-6">还没有账号？去<router-link class="c-pink" to="/register">注册</router-link>！</p>
             <h3 class="sub">使用第三方登录</h3>
             <p class="t-c other">
               <a href="" class="iconfont icon-qq"></a>
               <a href="" class="iconfont icon-weixin"></a>
               <a href="" class="iconfont icon-weibo"></a>
             </p>
+            <p class="t-r fs-12 c-6">还没有账号？去<router-link class="c-pink" to="/register">注册</router-link>！</p>
           </div>
         </div>
       </div>

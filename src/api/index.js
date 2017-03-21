@@ -6,18 +6,46 @@ let config = {
 let service = 'http://localhost/vuex-system/app/'
 wilddog.initializeApp(config)
 let ref = wilddog.sync().ref()
+let time = new Date()
+let currentTime = time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate()
 export default {
   // 邮箱注册
   regByEmail (email, pwd, This) {
-    wilddog.auth().createUserWithEmailAndPassword(email, pwd).then(function (user) {
-      console.log(user)
-    }).catch(function (err) {
-      switch (err.code) {
-        case 22203 :
-          console.log('邮箱已被注册！')
-          break
+    if (!email) {
+      This.$toasted.error('邮箱不能为空！', {
+        position: 'top-center'
+      })
+      return false
+    } else if (!pwd) {
+      This.$toasted.error('请输入密码！', {
+        position: 'top-center'
+      })
+      return false
+    } else {
+      This.$refs.topProgress.start()
+      let users = {
+        createTime: currentTime,
+        lastLoginTime: '',
+        liveAddress: '',
+        birthAddress: '',
+        depart: 0,
+        introduce: '',
+        faces: ''
       }
-    })
+      wilddog.auth().createUserWithEmailAndPassword(email, pwd).then(function (user) {
+        ref.child('users/' + user.uid).set(users)
+        This.$refs.topProgress.done()
+        setTimeout(function () {
+          This.$router.push('/home')
+        }, 500)
+      }).catch(function (err) {
+        switch (err.code) {
+          case 22203 :
+            console.log('邮箱已被注册！')
+            break
+        }
+      })
+    }
   },
   // 邮箱登录
   loginByEmail (email, pwd, This) {
@@ -85,6 +113,10 @@ export default {
           photoURL: service + path
         }).then(function () {
           console.log('头像更改成功')
+          ref.child('/faces').set({
+            'face': service + path,
+            'time': currentTime
+          })
           This.$toasted.show('头像修改成功！', {
             position: 'top-right'
           })
