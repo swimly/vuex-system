@@ -1,5 +1,6 @@
 <template>
   <div class="user">
+    <top-progress ref="topProgress"></top-progress>
     <div class="face" v-on:click="toggleInfo">
       <img :src="data.photoURL" alt="">
     </div>
@@ -31,9 +32,9 @@
           img-format="png"></my-upload>
         <ul class="row w">
           <li class="col v-m t-r">
-            <router-link class="link" to="/editpassword">
+            <router-link class="link" to="/setting/basic">
               <span class="iconfont icon-edit v-m"></span>
-              <span>修改密码</span>
+              <span>修改资料</span>
             </router-link>
             <span class="link" v-on:click="logout">
               <span class="iconfont icon-logout v-m"></span>
@@ -46,8 +47,9 @@
   </div>
 </template>
 <script>
-import myUpload from 'vue-image-crop-upload/upload-2.vue'
+import myUpload from 'vue-image-crop-upload/upload-2'
 import api from '../api'
+import topProgress from 'vue-top-progress'
 import { mapGetters } from 'vuex'
 export default {
   name: 'userPanel',
@@ -63,6 +65,7 @@ export default {
     }
   },
   created () {
+    console.log(this.data.createTime)
     if (this.$localStorage.get('wilddog:session::lcdc:DEFAULT')) {
       this.$store.dispatch('setAuth', JSON.parse(this.$localStorage.get('wilddog:session::lcdc:DEFAULT')).currentUser)
     } else {
@@ -75,7 +78,8 @@ export default {
     })
   },
   components: {
-    'my-upload': myUpload
+    'my-upload': myUpload,
+    topProgress
   },
   props: {
     data: {
@@ -104,7 +108,9 @@ export default {
     },
     cropUploadSuccess (jsonData, field) {
       console.log(jsonData)
-      // api.setFace(this, imgDataUrl)
+      this.show = false
+      api.setFace(this, jsonData.body.path)
+      this.$store.dispatch('toggleInfo')
     },
     cropUploadFail (status, field) {
     }

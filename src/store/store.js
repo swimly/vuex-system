@@ -5,6 +5,8 @@ import mutations from './mutations'
 import getters from './getters'
 import aside from './modules/aside'
 import count from './modules/count'
+import editInfo from './modules/editInfo'
+import users from './modules/users'
 Vue.use(Vuex)
 const state = {
   user: 'swimly',
@@ -17,6 +19,8 @@ export default new Vuex.Store({
   actions,
   modules: {
     aside,
-    count
+    count,
+    editInfo,
+    users
   }
 })
