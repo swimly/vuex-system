@@ -73,6 +73,9 @@ const mutations = {
   toggleInfo (state) {
     state.user.showInfo = !state.user.showInfo
   },
+  setInfo (state, v) {
+    state.user.showInfo = v
+  },
   setAuth (state, value) {
     state.auth = value
   }
@@ -87,6 +90,9 @@ const actions = {
   },
   toggleInfo ({commit}) {
     commit('toggleInfo')
+  },
+  setInfo ({commit}, v) {
+    commit('setInfo', v)
   },
   setAuth ({commit}, value) {
     commit('setAuth', value)

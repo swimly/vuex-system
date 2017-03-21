@@ -21,35 +21,47 @@ export default {
   },
   // 邮箱登录
   loginByEmail (email, pwd, This) {
-    This.$refs.topProgress.start()
-    wilddog.auth().signInWithEmailAndPassword(email, pwd).then(function (res) {
-      This.$store.dispatch('setAuth', JSON.parse(This.$localStorage.get('wilddog:session::lcdc:DEFAULT')).currentUser)
-      This.$refs.topProgress.done()
-      setTimeout(function () {
-        This.$router.push('/home')
-      }, 500)
-    }).catch(function (err) {
-      switch (err.code) {
-        case 22220 :
-          This.$refs.topProgress.fail()
-          This.$toasted.error('不存在该用户！', {
-            position: 'top-center'
-          })
-          break
-        case 22009 :
-          This.$refs.topProgress.fail()
-          This.$toasted.error('邮箱有误！', {
-            position: 'top-center'
-          })
-          break
-        case 22010 :
-          This.$refs.topProgress.fail()
-          This.$toasted.error('密码有误！', {
-            position: 'top-center'
-          })
-          break
-      }
-    })
+    if (!email) {
+      This.$toasted.error('邮箱不能为空！', {
+        position: 'top-center'
+      })
+      return false
+    } else if (!pwd) {
+      This.$toasted.error('请输入密码！', {
+        position: 'top-center'
+      })
+      return false
+    } else {
+      This.$refs.topProgress.start()
+      wilddog.auth().signInWithEmailAndPassword(email, pwd).then(function (res) {
+        This.$store.dispatch('setAuth', JSON.parse(This.$localStorage.get('wilddog:session::lcdc:DEFAULT')).currentUser)
+        This.$refs.topProgress.done()
+        setTimeout(function () {
+          This.$router.push('/home')
+        }, 500)
+      }).catch(function (err) {
+        switch (err.code) {
+          case 22220 :
+            This.$refs.topProgress.fail()
+            This.$toasted.error('不存在该用户！', {
+              position: 'top-center'
+            })
+            break
+          case 22009 :
+            This.$refs.topProgress.fail()
+            This.$toasted.error('邮箱有误！', {
+              position: 'top-center'
+            })
+            break
+          case 22010 :
+            This.$refs.topProgress.fail()
+            This.$toasted.error('密码有误！', {
+              position: 'top-center'
+            })
+            break
+        }
+      })
+    }
   },
   // 退出登录
   logout (This) {

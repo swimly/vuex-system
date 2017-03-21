@@ -109,6 +109,7 @@ export default {
       console.log(jsonData)
       this.show = false
       api.setFace(this, jsonData.body.path)
+      this.$store.dispatch('toggleInfo')
     },
     cropUploadFail (status, field) {
     }

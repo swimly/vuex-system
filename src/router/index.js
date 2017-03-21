@@ -90,6 +90,12 @@ export default new Router({
           components: {
             sub: require('@/views/usersAdd')
           }
+        }, {
+          path: '/editInfo',
+          name: 'editInfo',
+          components: {
+            sub: require('@/views/editInfo')
+          }
         }
       ]
     }, {
