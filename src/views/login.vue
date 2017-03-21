@@ -8,15 +8,21 @@
           <div class="login-panel">
             <h1 class="title">用户登录</h1>
             <div class="input w icon-left mt-10">
-              <input type="text" placeholder="用户名" v-model="email">
-              <span class="iconfont icon-users"></span>
+              <input type="text" placeholder="邮箱" v-model="email">
+              <span class="iconfont icon-user"></span>
             </div>
             <div class="input w icon-left mt-10">
               <input type="text" placeholder="密码" v-model="password">
-              <span class="iconfont icon-users"></span>
+              <span class="iconfont icon-password"></span>
             </div>
             <div v-on:click="submit" class="btn btn-blue btn-large w mt-10">登录</div>
             <p class="t-r fs-12 c-6">还没有账号？去<router-link class="c-pink" to="/register">注册</router-link>！</p>
+            <h3 class="sub">使用第三方登录</h3>
+            <p class="t-c other">
+              <a href="" class="iconfont icon-qq"></a>
+              <a href="" class="iconfont icon-weixin"></a>
+              <a href="" class="iconfont icon-weibo"></a>
+            </p>
           </div>
         </div>
       </div>
@@ -51,13 +57,18 @@
     }
   }
 </script>
-<style>
+<style scoped>
 .login{background:#F8F8F8;}
 .banner{display:inline-block;height:500px;background:#447DC8;width:100%;}
 .banner .mid-layout{position:relative;}
 .banner .img{height:100%;}
 .login-panel{position:absolute;right:0;top:50%;transform: translate(0,-50%);padding:20px;background:#fff;display:inline-block;width:300px;border-radius:5px;}
-.login-panel .title{margin:0;font-weight:normal;font-size:16px;color:#447DC8;border-bottom:1px solid #ccc;padding-bottom:10px;margin-bottom:10px;}
+.login-panel .title{margin:0;font-weight:normal;font-size:16px;color:#F86868;border-bottom:1px solid #ccc;padding-bottom:10px;margin-bottom:10px;}
 .logo{text-align:left;height:60px;}
 .copyright{font-size:12px;color:#999;height:60px;line-height:60px;}
+.login .sub{font-weight:normal;font-size:14px;color:#999;text-align:center;border-bottom:1px solid #eee;padding-bottom:10px;}
+.login .other a{font-size:3em;vertical-align:middle;display:inline-block;margin:0 5px;}
+.login .other a:hover{opacity:0.9;filter:alpha(opacity=90)}
+.login .other a:active{opacity:1;filter:alpha(opacity=100)}
+.icon-qq{color:#498AD5;}.icon-weibo{color:#E05244;}.icon-weixin{color:#00BB29;}
 </style>
