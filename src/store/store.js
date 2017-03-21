@@ -6,6 +6,7 @@ import getters from './getters'
 import aside from './modules/aside'
 import count from './modules/count'
 import editInfo from './modules/editInfo'
+import users from './modules/users'
 Vue.use(Vuex)
 const state = {
   user: 'swimly',
@@ -19,6 +20,7 @@ export default new Vuex.Store({
   modules: {
     aside,
     count,
-    editInfo
+    editInfo,
+    users
   }
 })

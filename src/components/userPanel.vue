@@ -32,7 +32,7 @@
           img-format="png"></my-upload>
         <ul class="row w">
           <li class="col v-m t-r">
-            <router-link class="link" to="/editInfo">
+            <router-link class="link" to="/setting/basic">
               <span class="iconfont icon-edit v-m"></span>
               <span>修改资料</span>
             </router-link>
@@ -65,6 +65,7 @@ export default {
     }
   },
   created () {
+    console.log(this.data.createTime)
     if (this.$localStorage.get('wilddog:session::lcdc:DEFAULT')) {
       this.$store.dispatch('setAuth', JSON.parse(this.$localStorage.get('wilddog:session::lcdc:DEFAULT')).currentUser)
     } else {

@@ -1,7 +1,8 @@
 <template>
   <div class="edit" v-on:click="hideInfo">
     <my-title data="修改资料"></my-title>
-    <my-tab :data="tab"></my-tab>
+    <my-tab :data="tab" basic="/editInfo/" class="mt-10 mb-10"></my-tab>
+    <router-view name="tab"></router-view>
   </div>
 </template>
 <script>

@@ -65,7 +65,45 @@ export default new Router({
           name: 'setting',
           components: {
             sub: require('@/views/setting')
-          }
+          },
+          children: [
+            {
+              path: '/setting/basic',
+              name: 'basic',
+              components: {
+                sub: require('@/views/projects'),
+                tab: require('@/views/editInfoBasic')
+              }
+            }, {
+              path: '/setting/personality',
+              name: 'personality',
+              components: {
+                sub: require('@/views/projects'),
+                tab: require('@/views/editInfoPersonality')
+              }
+            }, {
+              path: '/setting/safe',
+              name: 'safe',
+              components: {
+                sub: require('@/views/projects'),
+                tab: require('@/views/editInfoSafe')
+              }
+            }, {
+              path: '/setting/notice',
+              name: 'notice',
+              components: {
+                sub: require('@/views/projects'),
+                tab: require('@/views/editInfoNotice')
+              }
+            }, {
+              path: '/setting/other',
+              name: 'other',
+              components: {
+                sub: require('@/views/projects'),
+                tab: require('@/views/editInfoOther')
+              }
+            }
+          ]
         }, {
           path: '/manage',
           name: 'manage',
