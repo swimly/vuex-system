@@ -10,7 +10,7 @@
         <div class="col v-m t-r">
           <span class="btn btn-blue" v-on:click="showMask">
             <span class="v-m iconfont icon-add"></span>
-            <span class="v-m">新增数据源</span>
+            <span class="v-m">添加用户</span>
           </span>
         </div>
       </div>
@@ -77,11 +77,11 @@
         </div>
       </div>
     </div>
-    <addMask v-show="show"></addMask>
+    <userAddPop v-show="show"></userAddPop>
   </div>
 </template>
 <script>
-import addMask from '@/components/userPop'
+import userAddPop from '@/components/userAdd'
 import {mapGetters, mapMutations, mapActions} from 'vuex'
 import api from '../api'
 export default {
@@ -102,7 +102,7 @@ export default {
     api.getUserList(this)
   },
   components: {
-    addMask
+    userAddPop
   },
   computed: {
     ...mapGetters({

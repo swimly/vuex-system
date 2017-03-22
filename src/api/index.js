@@ -56,6 +56,30 @@ export default {
       })
     }
   },
+  // 添加用户
+  addUser (form, This) {
+    wilddog.auth().createUserWithEmailAndPassword(form.email, form.password).then(function (user) {
+      let users = {
+        uid: user.uid,
+        displayName: form.displayName,
+        sex: form.sex,
+        phoneNumber: form.phoneNumber,
+        email: form.email,
+        photoURL: '',
+        emailVerified: user.emailVerified,
+        phoneVerified: user.phoneVerified,
+        createTime: form.createTime,
+        lastLoginTime: '',
+        liveAddress: form.liveAddress,
+        birthAddress: form.birthAddress,
+        depart: form.depart,
+        introduce: form.introduce,
+        faces: ''
+      }
+      ref.child('users/' + user.uid).set(users)
+      console.log('成功添加!')
+    })
+  },
   // 邮箱登录
   loginByEmail (email, pwd, This) {
     if (!email) {
@@ -179,12 +203,12 @@ export default {
   getUserList (This) {
     let userListRef = wilddog.sync().ref('/users')
     let list = []
-    userListRef.once('value', function (snapshot) {
+    userListRef.on('value', function (snapshot) {
+      list = []
       snapshot.forEach(function (childsnapshot) {
         list.push(childsnapshot.val())
       })
       This.$store.dispatch('getData', list)
-      console.log(list)
     })
   },
   testLink () {
