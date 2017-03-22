@@ -5,6 +5,7 @@ const state = {
   showAdd: false,
   showEdit: false,
   showMore: false,
+  showDelete: false,
   info: [],
   caption: config.caption
 }
@@ -17,6 +18,9 @@ const getters = {
   },
   showMore (state) {
     return state.showMore
+  },
+  showDelete (state) {
+    return state.showDelete
   },
   getCaption (state) {
     return state.caption
@@ -89,6 +93,9 @@ const mutations = {
   },
   toggleMore (state) {
     state.showMore = !state.showMore
+  },
+  toggleDelete (state) {
+    state.showDelete = !state.showDelete
   }
 }
 const actions = {
@@ -103,6 +110,9 @@ const actions = {
   },
   toggleMore ({commit}) {
     commit('toggleMore')
+  },
+  toggleDelete ({commit}) {
+    commit('toggleDelete')
   }
 }
 export default {

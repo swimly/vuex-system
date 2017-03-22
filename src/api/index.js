@@ -92,6 +92,9 @@ export default {
       console.log('修改成功')
     })
   },
+  deleteUser (data, This) {
+    console.log(data.uid)
+  },
   // 邮箱登录
   loginByEmail (email, pwd, This) {
     if (!email) {

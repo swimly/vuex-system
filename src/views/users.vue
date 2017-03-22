@@ -59,7 +59,7 @@
             <td align="center">
               <button class="btn btn-light btn-mini" v-on:click="toggleMore(item)">查看</button>
               <button class="btn btn-light btn-mini" v-on:click="toggleEdit(item)">修改</button>
-              <button class="btn  btn-light btn-mini" v-on:click="">删除</button>
+              <button class="btn  btn-light btn-mini" v-on:click="toggleDelete(item)">删除</button>
             </td>
           </tr>
         </table>
@@ -81,12 +81,14 @@
     <userAddPop v-if="showAdd"></userAddPop>
     <userEditPop v-if="showEdit" :data="clist"></userEditPop>
     <userShowPop v-if="showMore" :data="clist"></userShowPop>
+    <userDeletePop v-if="showDelete" :data="clist"></userDeletePop>
   </div>
 </template>
 <script>
 import userAddPop from '@/components/userAdd'
 import userEditPop from '@/components/userEdit'
 import userShowPop from '@/components/userShow'
+import userDeletePop from '@/components/userDelete'
 import {mapGetters, mapMutations, mapActions} from 'vuex'
 import api from '../api'
 export default {
@@ -110,7 +112,8 @@ export default {
   components: {
     userAddPop,
     userEditPop,
-    userShowPop
+    userShowPop,
+    userDeletePop
   },
   computed: {
     ...mapGetters({
@@ -121,6 +124,7 @@ export default {
       showAdd: 'showAdd',
       showEdit: 'showEdit',
       showMore: 'showMore',
+      showDelete: 'showDelete',
       sum: 'sum',
       i: 'i',
       n: 'n'
@@ -134,6 +138,10 @@ export default {
     toggleEdit (data) {
       this.clist = data
       this.$store.dispatch('toggleEdit')
+    },
+    toggleDelete (data) {
+      this.clist = data
+      this.$store.dispatch('toggleDelete')
     },
     ...mapMutations({
       prev: 'prev',
