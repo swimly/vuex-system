@@ -85,6 +85,13 @@ export default {
       })
     }
   },
+  // 编辑用户
+  editUser (data, This) {
+    ref.child('users/' + data.uid).update(data).then(function () {
+      This.toggleEdit()
+      console.log('修改成功')
+    })
+  },
   // 邮箱登录
   loginByEmail (email, pwd, This) {
     if (!email) {

@@ -3,12 +3,20 @@ const state = {
   i: 0,
   max: 20,
   showAdd: false,
+  showEdit: false,
+  showMore: false,
   info: [],
   caption: config.caption
 }
 const getters = {
   showAdd (state) {
     return state.showAdd
+  },
+  showEdit (state) {
+    return state.showEdit
+  },
+  showMore (state) {
+    return state.showMore
   },
   getCaption (state) {
     return state.caption
@@ -75,6 +83,12 @@ const mutations = {
   },
   toggleAdd (state) {
     state.showAdd = !state.showAdd
+  },
+  toggleEdit (state) {
+    state.showEdit = !state.showEdit
+  },
+  toggleMore (state) {
+    state.showMore = !state.showMore
   }
 }
 const actions = {
@@ -83,6 +97,12 @@ const actions = {
   },
   toggleAdd ({commit}) {
     commit('toggleAdd')
+  },
+  toggleEdit ({commit}) {
+    commit('toggleEdit')
+  },
+  toggleMore ({commit}) {
+    commit('toggleMore')
   }
 }
 export default {

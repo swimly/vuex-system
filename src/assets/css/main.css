@@ -40,7 +40,8 @@ table{border-spacing:0;}
 .input label{display:inline-block;vertical-align:middle;font-size:14px;color:#474747;}
 .input input:checked + .iconfont{color:#447DC8;}
 .input select{border:1px solid #ddd;border-radius:3px;font-size:14px;padding:10px 1em;vertical-align:middle;color:#474747;}
-.input textarea{border:1px solid #ddd;border-radius:3px;width:100%;resize:none;font-size:14px;padding:10px 1em;line-height:1.5;color:#474747;transition:0.3s;}
+.input textarea{border:1px solid #ddd;border-radius:3px;width:100%;resize:none;font-size:14px;padding:10px 1em;line-height:1.5;color:#474747;transition:0.3s;color:#474747;font-family:"微软雅黑";}
+.input.radio{padding:5px 0;}
 .sub-title{font-size:16px;color:#474747;border-bottom:1px solid #e1e1e5;font-weight:normal;padding:10px;}
 
 .vue-image-crop-upload .vicp-wrap .vicp-step1 .vicp-drop-area{height:auto !important;}
@@ -77,6 +78,7 @@ table{border-spacing:0;}
 .table-form{width:100%;padding:0 20px;}
 .table-form th{font-weight:normal;font-size:14px;color:#474747;text-align:right;vertical-align:top;padding:10px 0;}
 .table-form td{padding:0 10px;height:50px;vertical-align:top;}
+.table-form td .text{font-size:14px;color:#666;padding:10px 0;}
 .mask-wrap .tips{font-size:14px;color:#999;}
 @font-face {
     font-family: "Capsuula";
@@ -112,4 +114,54 @@ table{border-spacing:0;}
     width: 5px;
     background-color: #fff;
     -webkit-border-radius: 5px;
+}
+
+.fold-enter-active {
+  animation-name: fold-in;
+  animation-duration: .3s;
+}
+.fold-leave-active {
+  animation-name: fold-out;
+  animation-duration: .3s;
+}
+@keyframes fold-in {
+  0% {
+    transform:translate(0,-100%)
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes fold-out {
+  0% {
+    transform:translate(0,0)
+  }
+  100% {
+    transform: translate(0,-100%);
+  }
+}
+
+.foldleft-enter-active {
+  animation-name: foldleft-in;
+  animation-duration: .3s;
+}
+.foldleft-leave-active {
+  animation-name: foldleft-out;
+  animation-duration: .3s;
+}
+@keyframes foldleft-in {
+  0% {
+    transform:translate(100%,0)
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes foldleft-out {
+  0% {
+    transform:translate(0,0)
+  }
+  100% {
+    transform: translate(0,0);
+  }
 }

@@ -133,29 +133,6 @@ export default {
   .face{width:60px;height:60px;}
   .panel{left:85px;}
 }
-.fold-enter-active {
-  animation-name: fold-in;
-  animation-duration: .3s;
-}
-.fold-leave-active {
-  animation-name: fold-out;
-  animation-duration: .3s;
-}
-@keyframes fold-in {
-  0% {
-    transform:translate(0,-100%)
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-@keyframes fold-out {
-  0% {
-    transform:translate(0,0)
-  }
-  100% {
-    transform: translate(0,-100%);
-  }
-}
+
 .vue-image-crop-upload .vicp-wrap .vicp-step3 .vicp-upload{height:auto !important;}
 </style>
