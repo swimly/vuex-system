@@ -1,4 +1,5 @@
 const config = {
+  service: 'http://192.168.7.179:8080//system/',
   xAxis: {
     axisTick: {
       show: false

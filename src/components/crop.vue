@@ -15,7 +15,7 @@
       v-model="show"
       :width="150"
       :height="150"
-      url="http://192.168.31.73:8080/system/upload.php"
+      :url="service + 'upload.php'"
       :params="params"
       :headers="headers"
       img-format="png">
@@ -26,11 +26,13 @@
 import myUpload from 'vue-image-crop-upload/upload-2'
 import api from '../api'
 import topProgress from 'vue-top-progress'
+import config from '../config'
 export default {
   name: 'crop',
   data () {
     return {
       show: false,
+      service: config.service,
       params: {
         url: ''
       },

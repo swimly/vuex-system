@@ -1,9 +1,9 @@
 import * as wilddog from 'wilddog'
+import con from '../config'
 let config = {
   syncURL: 'https://lcdc.wilddogio.com/',
   authDomain: 'lcdc.wilddog.com'
 }
-let service = 'http://192.168.31.73:8080/system/'
 wilddog.initializeApp(config)
 let ref = wilddog.sync().ref()
 let time = new Date()
@@ -23,16 +23,24 @@ export default {
       return false
     } else {
       This.$refs.topProgress.start()
-      let users = {
-        createTime: currentTime,
-        lastLoginTime: '',
-        liveAddress: '',
-        birthAddress: '',
-        depart: 0,
-        introduce: '',
-        faces: ''
-      }
       wilddog.auth().createUserWithEmailAndPassword(email, pwd).then(function (user) {
+        let users = {
+          uid: user.uid,
+          displayName: user.displayName,
+          phoneNumber: '',
+          email: user.email,
+          photoURL: user.photoURL,
+          emailVerified: user.emailVerified,
+          phoneVerified: user.phoneVerified,
+          createTime: currentTime,
+          lastLoginTime: '',
+          liveAddress: '',
+          birthAddress: '',
+          depart: 0,
+          introduce: '',
+          faces: ''
+        }
+        console.log(users)
         ref.child('users/' + user.uid).set(users)
         This.$refs.topProgress.done()
         setTimeout(function () {
@@ -139,11 +147,11 @@ export default {
     wilddog.auth().onAuthStateChanged(function (user) {
       if (user != null) {
         user.updateProfile({
-          photoURL: service + path
+          photoURL: con.service + path
         }).then(function () {
           console.log('头像更改成功')
-          ref.child('/faces').set({
-            'face': service + path,
+          ref.child('/users/' + user.uid + '/faces').push({
+            'photoURL': con.service + path,
             'time': currentTime
           })
           This.$toasted.show('头像修改成功！', {
