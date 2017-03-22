@@ -21,14 +21,14 @@
       <th>性别：</th>
       <td>
         <span></span>
-        <div class="input">
+        <div class="input mr-10">
           <input type="radio" value="0" name="sex" id="s1" v-model="form.sex">
-          <i></i>
+          <i class="iconfont icon-dot"></i>
           <label for="s1">男</label>
         </div>
         <div class="input">
           <input type="radio" value="1" name="sex" id="s2" v-model="form.sex">
-          <i></i>
+          <i class="iconfont icon-dot"></i>
           <label for="s2">女</label>
         </div>
       </td>

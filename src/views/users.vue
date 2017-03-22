@@ -8,8 +8,8 @@
           <a href="javascript:;" class="btn btn-blue iconfont icon-search" v-on:click="search({displayName, sexType})"></a>
         </div>
         <div class="col v-m t-r">
-          <span class="btn btn-blue" v-on:click="showMask">
-            <span class="v-m iconfont icon-add"></span>
+          <span class="btn btn-blue" v-on:click="toggleAdd">
+            <span class="v-m iconfont icon-addUser"></span>
             <span class="v-m">添加用户</span>
           </span>
         </div>
@@ -77,7 +77,7 @@
         </div>
       </div>
     </div>
-    <userAddPop v-show="show"></userAddPop>
+    <userAddPop v-show="showAdd"></userAddPop>
   </div>
 </template>
 <script>
@@ -110,7 +110,7 @@ export default {
       info: 'getInfo',
       limit: 'limit',
       idx: 'idx',
-      show: 'show',
+      showAdd: 'showAdd',
       sum: 'sum',
       i: 'i',
       n: 'n'
@@ -123,7 +123,7 @@ export default {
       home: 'home',
       end: 'end',
       search: 'search',
-      showMask: 'showMask'
+      toggleAdd: 'toggleAdd'
     }),
     ...mapActions([
     ])

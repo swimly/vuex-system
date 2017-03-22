@@ -15,11 +15,13 @@
   "dependencies": {
     "axios": "^0.15.3",
     "vue": "^2.2.1",
+    "vue-cascading-address": "^0.1.4",
     "vue-echarts-v3": "^1.0.3",
     "vue-fullcalendar": "^1.0.9",
     "vue-head": "^2.0.10",
     "vue-image-crop-upload": "^1.3.5",
     "vue-localstorage": "^0.1.3",
+    "vue-multiselect": "^2.0.0-beta.15",
     "vue-perfect-scrollbar": "0.0.7",
     "vue-resource": "^1.2.1",
     "vue-router": "^2.2.0",

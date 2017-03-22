@@ -2,13 +2,13 @@ import config from '../../config'
 const state = {
   i: 0,
   max: 20,
-  show: false,
+  showAdd: false,
   info: [],
   caption: config.caption
 }
 const getters = {
-  show (state) {
-    return state.show
+  showAdd (state) {
+    return state.showAdd
   },
   getCaption (state) {
     return state.caption
@@ -73,13 +73,16 @@ const mutations = {
       state.info = state.info
     }
   },
-  showMask (state) {
-    state.show = true
+  toggleAdd (state) {
+    state.showAdd = !state.showAdd
   }
 }
 const actions = {
   getData ({commit}, data) {
     commit('getData', data)
+  },
+  toggleAdd ({commit}) {
+    commit('toggleAdd')
   }
 }
 export default {

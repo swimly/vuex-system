@@ -58,27 +58,32 @@ export default {
   },
   // 添加用户
   addUser (form, This) {
-    wilddog.auth().createUserWithEmailAndPassword(form.email, form.password).then(function (user) {
-      let users = {
-        uid: user.uid,
-        displayName: form.displayName,
-        sex: form.sex,
-        phoneNumber: form.phoneNumber,
-        email: form.email,
-        photoURL: '',
-        emailVerified: user.emailVerified,
-        phoneVerified: user.phoneVerified,
-        createTime: form.createTime,
-        lastLoginTime: '',
-        liveAddress: form.liveAddress,
-        birthAddress: form.birthAddress,
-        depart: form.depart,
-        introduce: form.introduce,
-        faces: ''
-      }
-      ref.child('users/' + user.uid).set(users)
-      console.log('成功添加!')
-    })
+    if (!form.email) {
+      return false
+    } else {
+      wilddog.auth().createUserWithEmailAndPassword(form.email, form.password).then(function (user) {
+        let users = {
+          uid: user.uid,
+          displayName: form.displayName,
+          sex: form.sex,
+          phoneNumber: form.phoneNumber,
+          email: form.email,
+          photoURL: '',
+          emailVerified: user.emailVerified,
+          phoneVerified: user.phoneVerified,
+          createTime: form.createTime,
+          lastLoginTime: '',
+          liveAddress: form.liveAddress,
+          birthAddress: form.birthAddress,
+          depart: form.depart,
+          introduce: form.introduce,
+          faces: ''
+        }
+        ref.child('users/' + user.uid).set(users)
+        This.toggleAdd()
+        console.log('成功添加!')
+      })
+    }
   },
   // 邮箱登录
   loginByEmail (email, pwd, This) {
