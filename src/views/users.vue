@@ -83,6 +83,7 @@
 <script>
 import addMask from '@/components/userPop'
 import {mapGetters, mapMutations, mapActions} from 'vuex'
+import api from '../api'
 export default {
   name: 'users',
   head: {
@@ -96,6 +97,9 @@ export default {
       sexType: '',
       index: 0
     }
+  },
+  created () {
+    api.getUserList(this)
   },
   components: {
     addMask
@@ -121,7 +125,8 @@ export default {
       search: 'search',
       showMask: 'showMask'
     }),
-    ...mapActions([])
+    ...mapActions([
+    ])
   }
 }
 </script>

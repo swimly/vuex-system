@@ -3,7 +3,7 @@ const state = {
   i: 0,
   max: 20,
   show: false,
-  info: config.info,
+  info: [],
   caption: config.caption
 }
 const getters = {
@@ -33,6 +33,9 @@ const getters = {
   }
 }
 const mutations = {
+  getData (state, data) {
+    state.info = data
+  },
   prev (state) {
     if (state.i > 0) {
       state.i = state.i - 1
@@ -54,7 +57,6 @@ const mutations = {
     state.i = n - 1
   },
   search (state, payload) {
-    state.info = config.info
     if (payload.displayName === '' && payload.sexType !== '') {
       state.info = state.info.filter(function (item) {
         return item.sex.match(payload.sexType)
@@ -76,6 +78,9 @@ const mutations = {
   }
 }
 const actions = {
+  getData ({commit}, data) {
+    commit('getData', data)
+  }
 }
 export default {
   state,

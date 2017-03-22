@@ -1,5 +1,6 @@
 import * as wilddog from 'wilddog'
 import con from '../config'
+import plugin from './plugins'
 let config = {
   syncURL: 'https://lcdc.wilddogio.com/',
   authDomain: 'lcdc.wilddog.com'
@@ -26,10 +27,11 @@ export default {
       wilddog.auth().createUserWithEmailAndPassword(email, pwd).then(function (user) {
         let users = {
           uid: user.uid,
-          displayName: user.displayName,
+          displayName: plugin.getName(),
+          sex: '未知',
           phoneNumber: '',
           email: user.email,
-          photoURL: user.photoURL,
+          photoURL: '',
           emailVerified: user.emailVerified,
           phoneVerified: user.phoneVerified,
           createTime: currentTime,
@@ -40,7 +42,6 @@ export default {
           introduce: '',
           faces: ''
         }
-        console.log(users)
         ref.child('users/' + user.uid).set(users)
         This.$refs.topProgress.done()
         setTimeout(function () {
@@ -99,6 +100,7 @@ export default {
       })
     }
   },
+  // QQ登录
   loginByQQ (This) {
     var provider = new wilddog.auth.QQAuthProvider()
     wilddog.auth().signInWithPopup(provider).then(function (user) {
@@ -108,6 +110,7 @@ export default {
       console.log(error)
     })
   },
+  // 微信登录
   loginByWexin (This) {
     var provider = new wilddog.auth.WeixinAuthProvider()
     wilddog.auth().signInWithPopup(provider).then(function (user) {
@@ -118,6 +121,7 @@ export default {
         // ...
     })
   },
+  // 微博登录
   loginByWebo (This) {
     var provider = new wilddog.auth.WeiboAuthProvider()
     wilddog.auth().signInWithPopup(provider).then(function (user) {
@@ -147,9 +151,12 @@ export default {
     wilddog.auth().onAuthStateChanged(function (user) {
       if (user != null) {
         user.updateProfile({
-          photoURL: con.service + path
+          'photoURL': con.service + path
         }).then(function () {
           console.log('头像更改成功')
+          ref.child('/users/' + user.uid).update({
+            'photoURL': con.service + path
+          })
           ref.child('/users/' + user.uid + '/faces').push({
             'photoURL': con.service + path,
             'time': currentTime
@@ -166,6 +173,18 @@ export default {
         })
       } else {
       }
+    })
+  },
+  // 获取用户列表
+  getUserList (This) {
+    let userListRef = wilddog.sync().ref('/users')
+    let list = []
+    userListRef.once('value', function (snapshot) {
+      snapshot.forEach(function (childsnapshot) {
+        list.push(childsnapshot.val())
+      })
+      This.$store.dispatch('getData', list)
+      console.log(list)
     })
   },
   testLink () {
